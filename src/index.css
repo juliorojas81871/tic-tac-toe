@@ -1,13 +1,89 @@
+html,
 body {
+  padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: "Courier New", Courier, monospace;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+* {
+  box-sizing: border-box;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+h1 {
+  text-align: center;
+}
+
+.game {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.game_menu {
+  text-align: center;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.game_board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 8px;
+}
+
+.square {
+  background-color: #eee;
+  border-radius: 8px;
+  box-shadow: 0px 4px #ddd;
+  font-size: 64px;
+  font-weight: bold;
+  text-align: center;
+  width: 100px;
+  height: 100px;
+  line-height: 100px;
+  cursor: pointer;
+}
+
+.square.highlight {
+  background-color: aquamarine;
+  box-shadow: none;
+}
+
+.modal {
+  width: 250px;
+  box-shadow: 0px 0px 10px 0px gray;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 16px;
+  position: fixed;
+  padding: 24px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  background-color: white;
+  transition: transform 0.2s;
+}
+
+.modal.show {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.modal_title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+
+button {
+  border: none;
+  width: 100%;
+  height: 36px;
+  font-size: 18px;
+  font-weight: 600;
 }
